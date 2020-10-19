@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"encoding/hex"
 
 	"github.com/bwesterb/go-xmssmt"
 
@@ -65,6 +66,9 @@ func cmdGenerate(c *cli.Context) error {
 		}
 	}
 
+	fmt.Printf("Generating key type %s. \n", params.String())
+	fmt.Printf("Public key and signature exclude this type information.\n")
+
 	ctx, err := xmssmt.NewContext(*params)
 
 	if err != nil {
@@ -97,15 +101,19 @@ func cmdGenerate(c *cli.Context) error {
 	if err != nil {
 		return cli.NewExitError(err, 6)
 	}
-	pkBase64, _ := pk.MarshalText()
 
-	err = ioutil.WriteFile(c.String("pubkey"), pkBytes, 0644)
+	pkBytesHex := hex.EncodeToString(pkBytes[4:]);
+
+	err = ioutil.WriteFile(c.String("pubkey"), pkBytes[4:], 0644)
 	if err != nil {
 		return cli.NewExitError(err, 7)
 	}
 
 	fmt.Printf("Successfully generated keypair.\n\n")
-	fmt.Printf("Public key: %s\n", pkBase64)
+
+	fmt.Printf("Public key (%d bytes):\n", len(pkBytes)-4)
+	fmt.Printf("   %s\n", pkBytesHex[:len(pkBytesHex)/2])
+	fmt.Printf("   %s\n", pkBytesHex[len(pkBytesHex)/2:])
 
 	return nil
 }
