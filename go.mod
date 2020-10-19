@@ -1,7 +1,8 @@
-module github.com/bwesterb/xmssmt
+module github.com/brainhub/xmss-sign
 
 require (
 	github.com/bwesterb/go-xmssmt v1.4.0
+	github.com/bwesterb/xmssmt v1.3.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/dustin/go-humanize v1.0.0
 	github.com/mattn/go-runewidth v0.0.9 // indirect

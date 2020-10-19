@@ -8,6 +8,7 @@ github.com/bwesterb/go-xmssmt v1.3.0 h1:62RiZEpiXdyl5eKId+VVQiWcPtitVocQJU/E7S9l
 github.com/bwesterb/go-xmssmt v1.3.0/go.mod h1:r12Xc4oWDZUJwxu/GYhwVmBcY5AqIBFvfQpfrz2MmRo=
 github.com/bwesterb/go-xmssmt v1.4.0 h1:aem6Q8OuiLZuKXf4/shLGI+Qy7N3zsOO2/Ga8XfacM0=
 github.com/bwesterb/go-xmssmt v1.4.0/go.mod h1:HF48A0WMH2E21wN2oly7j2WVSGxxBaXt497K/nsTdgg=
+github.com/bwesterb/xmssmt v1.3.0/go.mod h1:m97RME+OX1VSbyQxouP7nBagDUd2CbqQyod2wlb0SAw=
 github.com/cespare/xxhash v1.1.0 h1:a6HrQnmkObjyL+Gs60czilIUGqrzKutQD6XZog3p+ko=
 github.com/cespare/xxhash v1.1.0/go.mod h1:XrSqR1VqqWfGrhpAt58auRo0WTKS1nRRg3ghfAqPWnc=
 github.com/cpuguy83/go-md2man/v2 v2.0.0-20190314233015-f79a8a8ca69d h1:U+s90UTSYgptZMwQh2aRr3LuazLJIa+Pg3Kc1ylSYVY=

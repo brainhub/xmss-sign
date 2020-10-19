@@ -73,7 +73,7 @@ func cmdSign(c *cli.Context) error {
 		if c.IsSet("output") {
 			outPath = c.String("output")
 		} else {
-			outPath = c.String("file") + ".xmssmt-signature"
+			outPath = c.String("file") + ".sig"
 		}
 
 		wr, err = os.Create(outPath)
@@ -85,7 +85,7 @@ func cmdSign(c *cli.Context) error {
 		wr = os.Stdout
 	}
 
-	if _, err := wr.Write(sigBytes); err != nil {
+	if _, err := wr.Write(sigBytes[4:]); err != nil {
 		return cli.NewExitError(fmt.Sprintf(
 			"Writing signature failed: %v", err), 16)
 	}

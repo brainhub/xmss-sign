@@ -26,7 +26,7 @@ func main() {
 	app.Commands = []cli.Command{
 		{
 			Name:   "algs",
-			Usage:  "List XMSS[MT] instances",
+			Usage:  "List XMSS[MT] instances (XMSS-SHA2_20_256 is default)",
 			Action: cmdAlgs,
 			Flags: []cli.Flag{
 				cli.BoolFlag{
@@ -44,7 +44,7 @@ func main() {
 				cli.StringFlag{
 					Name:  "alg, a",
 					Usage: "XMSS[MT] named instance to use, see `xmssmt algs'",
-					Value: "XMSSMT-SHAKE_40/4_256",
+					Value: "XMSS-SHA2_20_256",
 				},
 				cli.IntFlag{
 					Name:  "n",
@@ -59,12 +59,12 @@ func main() {
 				cli.IntFlag{
 					Name:  "full-height, t",
 					Usage: "Override full tree height parameter",
-					Value: 40,
+					Value: 20,
 				},
 				cli.IntFlag{
 					Name:  "d",
 					Usage: "Override height-of-hypertree paramater d",
-					Value: 4,
+					Value: 0,
 				},
 				cli.BoolFlag{
 					Name:  "force, f",
@@ -73,7 +73,7 @@ func main() {
 				cli.StringFlag{
 					Name:  "hash, H",
 					Usage: "Override hash function to use. (shake, shake256 or sha2)",
-					Value: "shake",
+					Value: "sha2",
 				},
 				cli.StringFlag{
 					Name:  "prf, P",
@@ -82,12 +82,12 @@ func main() {
 				cli.StringFlag{
 					Name:  "privkey, s",
 					Usage: "Path to store private key at",
-					Value: "xmssmt.key",
+					Value: "xmss-sha256_20.key",
 				},
 				cli.StringFlag{
 					Name:  "pubkey, p",
 					Usage: "Path to store public key at",
-					Value: "xmssmt.pub",
+					Value: "xmss-sha256_20.pub",
 				},
 			},
 		},
@@ -99,7 +99,7 @@ func main() {
 				cli.StringFlag{
 					Name:  "privkey, s",
 					Usage: "Use private key stored at `FILE`",
-					Value: "xmssmt.key",
+					Value: "xmss-sha256_20.key",
 				},
 				cli.StringFlag{
 					Name:  "file, f",
@@ -119,7 +119,7 @@ func main() {
 				cli.StringFlag{
 					Name:  "pubkey, p",
 					Usage: "Path to read public key from `FILE`",
-					Value: "xmssmt.pub",
+					Value: "xmss-sha256_20.pub",
 				},
 				cli.StringFlag{
 					Name:  "file, f",
